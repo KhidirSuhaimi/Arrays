@@ -1,0 +1,50 @@
+package Arrays;
+
+import java.util.HashSet;
+
+public class ReverseArray {
+
+    public static void main(String[] args) {
+        int arr[] = {1,2,3,4,5};
+        int reverseArr[] = new int[arr.length];
+        int index = 0;
+
+        //reverse array
+        for ( int i = arr.length-1; i>=0;i--){
+            reverseArr[index] = arr[i];
+            index++;
+        }
+
+        //check for duplicate
+
+
+
+        for (int n: reverseArr){
+            System.out.print(n +" ");
+        }
+
+        if (containsDuplicate(arr)){
+            System.out.print("The array contains duplicate elements");
+        }
+        else{
+            System.out.print("The array does not contain duplicate elements");
+        }
+
+
+
+
+    }
+    public static boolean containsDuplicate(int[] array){
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num: array){
+            if(set.contains(num)){
+                return true;
+            }
+            set.add(num);
+        }
+        return false;
+
+    }
+
+}
